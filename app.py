@@ -1,36 +1,24 @@
-from flask import Flask
+from flask import Flask, redirect, render_template, request, url_for
 from pars import Parser
 
 app = Flask(__name__)
 
 
-@app.route('/')
-def hello():
+
+@app.route('/',methods = ['POST', 'GET'])
+def login():
+    user = request.args.get('login')
+    password = request.args.get('psw')
+    if user == "pobeda" and password == "yes":
+        access = True
+        return redirect("pars")
+    return render_template("login.html")
+
+@app.route('/pars')
+def parser():
     a = Parser()
-    html = f'''
-    <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRADEBUFF</title>
-    <link rel="stylesheet" href="static\style.css">
-
-</head>
-
-<body>
-    <div class="grid">
-        {a.sorted()}
-    </div>
-</body>
-
-</html>
-    '''
-    return html
-
+    return render_template("site.html", a=a)
 
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(debug = True)
