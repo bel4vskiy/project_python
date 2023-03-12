@@ -6,11 +6,6 @@ import json
 class Parser:
 
 
-    def sorted(self):
-        data = self.buff_pars()
-        data.sort(reverse=True)
-        return data
-
     def buff_pars_csgo(self):
         a = 1677141231389
         union = []
