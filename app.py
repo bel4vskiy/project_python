@@ -11,13 +11,25 @@ def login():
     password = request.args.get('psw')
     if user == "pobeda" and password == "yes":
         access = True
-        return redirect("pars")
+        return redirect("csgo")
     return render_template("login.html")
 
-@app.route('/pars')
-def parser():
+@app.route('/csgo')
+def parser_csgo():
     a = Parser()
-    return render_template("site.html", a=a)
+    return render_template("csgo.html", a=a)
+
+
+@app.route('/dota2')
+def parser_dota():
+    a = Parser()
+    return render_template("dota.html", a=a)
+
+@app.route('/rust')
+def parser_rust():
+    a = Parser()
+    return render_template("rust.html", a=a)
+
 
 
 if __name__=="__main__":
