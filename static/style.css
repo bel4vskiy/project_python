@@ -81,3 +81,31 @@ button {
 .container {
     padding: 16px;
 }
+.title{
+	font-size: 36px;
+	padding-top: 10px;
+	text-align: center;
+
+}
+.menu{
+	list-style: none;
+	position: absolute;
+	left: 100px;
+    font-weight: 600;
+    top: 3px;
+    align-items: center;
+}
+header{
+	width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+	background: #ff9102;
+	height: 70px;
+    margin-bottom: 20px;
+}
+
+.exit {
+    position: absolute;
+    right: 100px;
+    top: 35px;
+    font-weight: 600;
+}
