@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRADEBUFF</title>
+    <link rel="stylesheet" href="static\style.css">
+
+</head>
+
+<body>
+    <div id = "wrap">
+	<header>
+        <div class = "title">TRADEBUFF</div>
+        <ul class = "menu">
+                <li><a href = "/csgo">CSGO</a></li>
+                <li><a href = "/dota2">DOTA2</a></li>
+                <li><a href = "/rust">RUST</a></li>
+        </ul>
+        <div class="exit"><a href="/log">EXIT</a></div>    
+    </header>
+    </div>
+    <div class="grid">
+        {% for d in a.buff_pars_rust() %}
+        <div class="item">
+            <a href={{d[4]}}>
+                <center>
+                    <img src={{d[5]}} alt="">
+                </center>
+
+                <div class="name">
+                    <span>{{d[1]}}</span>
+                </div>
+                <div class="feauters">
+                    <span>Цена Buff: {{d[2]}} RUB</span>
+                    <span>Цена Steam: {{d[3]}} RUB</span>
+                    <span>Разница: {{d[0]}}%</span>
+
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
