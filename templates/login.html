@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="static\style.css">
 </head>
 <body>
-    <form>
+    <form action="" method="post">
         <div class="container">
           <label for="login"><b>Логин</b></label>
           <input type="text" placeholder="Введите логин" name="login" required>
           <label for="psw"><b>Пароль</b></label>
           <input type="password" placeholder="Введите пароль" name="psw" required>
           <button type="submit">Авторизация</button>
+          <div class="no_acc">
+            <span>Нет аккаунта?</span>
+            <a href="/auth">Создать</a>
+          </div>
         </div>
       </form>
 </body>
